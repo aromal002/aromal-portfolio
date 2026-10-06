@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <title>Graphic Design | Aromal A</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="prefetch" href="index.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f8f6;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 40px 100px;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            letter-spacing: 4px;
+            font-weight: 600;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 35px;
+        }
+
+        .hero h1 span {
+            color: #ff3838;
+        }
+
+        .hero-description {
+            max-width: 760px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery-section {
+            padding: 40px 0 60px;
+            overflow: hidden;
+        }
+
+        .gallery-heading {
+            max-width: 1200px;
+            margin: 0 auto 45px;
+            padding: 0 40px;
+        }
+
+        .gallery-heading span {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .gallery-heading h2 {
+            font-size: 42px;
+            letter-spacing: -2px;
+        }
+
+
+        /* =========================
+           MOVING ROW
+        ========================= */
+
+        .poster-row {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 28px;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: pan-y;
+            position: relative;
+        }
+
+        .poster-row.is-dragging {
+            cursor: grabbing;
+        }
+
+        .poster-track {
+            display: flex;
+            gap: 22px;
+            width: max-content;
+            will-change: transform;
+        }
+
+        /* =========================
+           POSTER CARD
+        ========================= */
+
+        .poster {
+            width: 210px;
+            height: 285px;
+            flex-shrink: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #e8e8e6;
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .poster:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .poster img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+
+        /* =========================
+           CLOSING
+        ========================= */
+
+        .closing {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px 160px;
+        }
+
+        .closing-line {
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+            margin-bottom: 70px;
+        }
+
+        .closing h2 {
+            max-width: 850px;
+            font-size: clamp(42px, 6vw, 78px);
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+        }
+
+        .closing p {
+            max-width: 650px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .hero {
+                padding: 50px 20px 10px;
+            }
+
+            .hero-label {
+                font-size: 13.5px;
+                letter-spacing: 3.5px;
+                font-weight: 700;
+                color: #444;
+                margin-bottom: 8px;
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 13.5vw, 64px);
+                line-height: 0.95;
+                letter-spacing: -0.045em;
+                margin-bottom: 15px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                max-width: 100%;
+            }
+
+            .hero-description {
+                font-size: 17px;
+                line-height: 1.6;
+                color: #333;
+                margin-bottom: 0;
+            }
+
+            .gallery-section {
+                padding: 12px 0 22px;
+            }
+
+            .gallery-heading {
+                padding: 0 20px;
+                margin-bottom: 14px;
+            }
+
+            .gallery-heading span {
+                font-size: 12px;
+                letter-spacing: 3px;
+                margin-bottom: 4px;
+            }
+
+            .gallery-heading h2 {
+                font-size: clamp(26px, 7vw, 32px);
+                letter-spacing: -1px;
+            }
+
+            .poster {
+                width: 165px;
+                height: 225px;
+            }
+
+            .closing {
+                padding: 25px 20px 70px;
+            }
+
+            .closing-line {
+                margin-bottom: 25px;
+            }
+
+            .closing h2 {
+                font-size: clamp(28px, 7.5vw, 38px);
+                line-height: 1.1;
+                letter-spacing: -0.03em;
+                margin-bottom: 18px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                max-width: 100%;
+            }
+
+            .closing p {
+                font-size: 15.5px;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .hero {
+                padding: 44px 16px 8px;
+            }
+
+            .hero-label {
+                font-size: 12.5px;
+                letter-spacing: 3px;
+                font-weight: 700;
+                color: #444;
+                margin-bottom: 6px;
+            }
+
+            .hero h1 {
+                font-size: clamp(42px, 12.5vw, 54px);
+                line-height: 0.95;
+                letter-spacing: -0.04em;
+                margin-bottom: 12px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+                line-height: 1.55;
+                color: #333;
+                margin-bottom: 0;
+            }
+
+            .gallery-section {
+                padding: 10px 0 16px;
+            }
+
+            .gallery-heading {
+                padding: 0 16px;
+                margin-bottom: 12px;
+            }
+
+            .gallery-heading span {
+                font-size: 11px;
+                letter-spacing: 2.5px;
+                margin-bottom: 4px;
+            }
+
+            .gallery-heading h2 {
+                font-size: 24px;
+            }
+
+            .poster {
+                width: 145px;
+                height: 200px;
+            }
+
+            .closing {
+                padding: 20px 16px 55px;
+            }
+
+            .closing-line {
+                margin-bottom: 20px;
+            }
+
+            .closing h2 {
+                font-size: clamp(24px, 7vw, 30px);
+                letter-spacing: -0.025em;
+                margin-bottom: 14px;
+            }
+
+            .closing p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-minimal">
+        <a href="index.html#hero" class="logo">
+            Aromal A
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-label">
+            GRAPHIC DESIGN
+        </div>
+
+        <h1>
+            Visuals made<br>
+            to <span>communicate.</span>
+        </h1>
+
+        <p class="hero-description">
+            I create posters and visual designs based on each client's
+            requirements — from promotional creatives and event posters
+            to social media designs. Every design is created with a focus
+            on clear communication, strong visuals and the purpose behind
+            the content.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <section class="gallery-section">
+
+        <div class="gallery-heading">
+
+            <span>SELECTED WORK</span>
+
+            <h2>
+                A collection of designs.
+            </h2>
+
+        </div>
+
+
+        <!-- ROW 1 -->
+
+        <div class="poster-row row-one" data-lenis-prevent>
+
+            <div class="poster-track">
+
+                <div class="poster" data-poster-id="1">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276360/poster-01_jqnsfw.jpg" alt="Graphic Design 01">
+                </div>
+
+                <div class="poster" data-poster-id="2">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276362/poster-02_r9jrdp.png" alt="Graphic Design 02">
+                </div>
+
+                <div class="poster" data-poster-id="3">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276363/poster-03_vto4tx.png" alt="Graphic Design 03">
+                </div>
+
+                <div class="poster" data-poster-id="4">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276364/poster-04_qj5u5t.png" alt="Graphic Design 04">
+                </div>
+
+                <div class="poster" data-poster-id="5">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276361/poster-05_fvfgk0.jpg" alt="Graphic Design 05">
+                </div>
+
+                <div class="poster" data-poster-id="6">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276365/poster-06_e1yb7f.png" alt="Graphic Design 06">
+                </div>
+
+                <div class="poster" data-poster-id="7">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276360/poster-07_fguuiv.jpg" alt="Graphic Design 07">
+                </div>
+
+                <div class="poster" data-poster-id="8">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276361/poster-08_j4fjik.jpg" alt="Graphic Design 08">
+                </div>
+
+                <div class="poster" data-poster-id="9">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276434/poster-09_ozrvuv.png" alt="Graphic Design 09">
+                </div>
+
+                <div class="poster" data-poster-id="10">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276363/poster-10_xusofy.jpg" alt="Graphic Design 10">
+                </div>
+
+                <!-- Duplicate for seamless loop -->
+                <div class="poster" data-poster-id="1">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276360/poster-01_jqnsfw.jpg" alt="Graphic Design 01">
+                </div>
+
+                <div class="poster" data-poster-id="2">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276362/poster-02_r9jrdp.png" alt="Graphic Design 02">
+                </div>
+
+                <div class="poster" data-poster-id="3">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276363/poster-03_vto4tx.png" alt="Graphic Design 03">
+                </div>
+
+                <div class="poster" data-poster-id="4">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276364/poster-04_qj5u5t.png" alt="Graphic Design 04">
+                </div>
+
+                <div class="poster" data-poster-id="5">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276361/poster-05_fvfgk0.jpg" alt="Graphic Design 05">
+                </div>
+
+                <div class="poster" data-poster-id="6">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276365/poster-06_e1yb7f.png" alt="Graphic Design 06">
+                </div>
+
+                <div class="poster" data-poster-id="7">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276360/poster-07_fguuiv.jpg" alt="Graphic Design 07">
+                </div>
+
+                <div class="poster" data-poster-id="8">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276361/poster-08_j4fjik.jpg" alt="Graphic Design 08">
+                </div>
+
+                <div class="poster" data-poster-id="9">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276434/poster-09_ozrvuv.png" alt="Graphic Design 09">
+                </div>
+
+                <div class="poster" data-poster-id="10">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276363/poster-10_xusofy.jpg" alt="Graphic Design 10">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ROW 2 -->
+
+        <div class="poster-row row-two" data-lenis-prevent>
+
+            <div class="poster-track">
+
+                <div class="poster" data-poster-id="11">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276366/poster-11_c6ntnj.png" alt="Graphic Design 11">
+                </div>
+
+                <div class="poster" data-poster-id="12">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276365/poster-12_zfsvt0.png" alt="Graphic Design 12">
+                </div>
+
+                <div class="poster" data-poster-id="13">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276374/poster-13_jvr9ne.png" alt="Graphic Design 13">
+                </div>
+
+                <div class="poster" data-poster-id="14">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276367/poster-14_hfvm22.png" alt="Graphic Design 14">
+                </div>
+
+                <div class="poster" data-poster-id="15">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276368/poster-15_mce2l3.png" alt="Graphic Design 15">
+                </div>
+
+                <div class="poster" data-poster-id="16">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276369/poster-16_ojxsmk.png" alt="Graphic Design 16">
+                </div>
+
+                <div class="poster" data-poster-id="17">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276370/poster-17_ldci0x.png" alt="Graphic Design 17">
+                </div>
+
+                <div class="poster" data-poster-id="18">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276370/poster-18_sjtnhw.png" alt="Graphic Design 18">
+                </div>
+
+                <div class="poster" data-poster-id="19">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276370/poster-19_fk4h7n.png" alt="Graphic Design 19">
+                </div>
+
+                <div class="poster" data-poster-id="20">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276371/poster-20_movbku.png" alt="Graphic Design 20">
+                </div>
+
+                <!-- Duplicate for seamless loop -->
+                <div class="poster" data-poster-id="11">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276366/poster-11_c6ntnj.png" alt="Graphic Design 11">
+                </div>
+
+                <div class="poster" data-poster-id="12">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276365/poster-12_zfsvt0.png" alt="Graphic Design 12">
+                </div>
+
+                <div class="poster" data-poster-id="13">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276374/poster-13_jvr9ne.png" alt="Graphic Design 13">
+                </div>
+
+                <div class="poster" data-poster-id="14">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276367/poster-14_hfvm22.png" alt="Graphic Design 14">
+                </div>
+
+                <div class="poster" data-poster-id="15">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276368/poster-15_mce2l3.png" alt="Graphic Design 15">
+                </div>
+
+                <div class="poster" data-poster-id="16">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276369/poster-16_ojxsmk.png" alt="Graphic Design 16">
+                </div>
+
+                <div class="poster" data-poster-id="17">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276370/poster-17_ldci0x.png" alt="Graphic Design 17">
+                </div>
+
+                <div class="poster" data-poster-id="18">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276370/poster-18_sjtnhw.png" alt="Graphic Design 18">
+                </div>
+
+                <div class="poster" data-poster-id="19">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276370/poster-19_fk4h7n.png" alt="Graphic Design 19">
+                </div>
+
+                <div class="poster" data-poster-id="20">
+                    <img src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791276371/poster-20_movbku.png" alt="Graphic Design 20">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CLOSING
+    ========================= -->
+
+    <section class="closing">
+
+        <div class="closing-line"></div>
+
+        <h2>
+            Design that gives your message a visual identity.
+        </h2>
+
+        <p>
+            From individual poster designs to ongoing creative requirements,
+            I create visuals that are clear, purposeful and built around
+            the needs of each project.
+        </p>
+
+    </section>
+
+    <!-- ==========================
+         PURE IMAGE ZOOM MODAL (NO WRITING / NO CARD)
+    ========================== -->
+    <div class="pure-image-modal" id="pureImageModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="pure-image-backdrop" id="pureImageBackdrop"></div>
+        <div class="pure-image-container">
+            <button type="button" class="pure-image-close" id="pureImageClose" aria-label="Close preview">✕</button>
+            <img src="" alt="" id="pureImageImg" class="pure-image-img">
+        </div>
+    </div>
+
+    <script type="module" src="/js/script.js"></script>
+</body>
+</html>

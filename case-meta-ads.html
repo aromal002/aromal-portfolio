@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <title>Meta Ads & Lead Generation | Aromal A</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts & CDN Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="prefetch" href="index.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+    font-family: "DM Sans", sans-serif;
+    background: #ffffff;
+    color: #111111;
+    overflow-x: hidden;
+}
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 45, 45, 0.08),
+            transparent 32%
+        ),
+        #ffffff;
+}
+
+        /* Background glow */
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            left: 50%;
+            top: 42%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: rgba(255, 45, 45, 0.06);
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        /* Grid */
+
+        .grid-background {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.035)
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.035)
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.8),
+                transparent 90%
+            );
+
+            pointer-events: none;
+        }
+
+        /* =========================
+           FLOATING ORBS
+        ========================= */
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(1px);
+        }
+
+        .orb-1 {
+            width: 8px;
+            height: 8px;
+            background: #ff3b30;
+            left: 12%;
+            top: 28%;
+            box-shadow: 0 0 25px #ff3b30;
+            animation: floatOne 5s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 5px;
+            height: 5px;
+            background: #ffffff;
+            right: 17%;
+            top: 32%;
+            box-shadow: 0 0 20px #ffffff;
+            animation: floatTwo 6s ease-in-out infinite;
+        }
+
+        .orb-3 {
+            width: 6px;
+            height: 6px;
+            background: #ff3b30;
+            right: 25%;
+            bottom: 25%;
+            box-shadow: 0 0 20px #ff3b30;
+            animation: floatOne 7s ease-in-out infinite;
+        }
+
+        @keyframes floatOne {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+
+        }
+
+        @keyframes floatTwo {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
+
+        }
+
+        /* =========================
+           HERO CONTENT
+        ========================= */
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(1100px, 90%);
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 100px 0 80px;
+        }
+
+        /* Small label */
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 9px 16px;
+
+            border: 1px solid rgba(255,255,255,0.10);
+
+            background: rgba(255,255,255,0.04);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 100px;
+
+            color: #bcbcbc;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+        }
+
+        .label-dot {
+    width: 7px;
+    height: 7px;
+
+    background: #ff3b30;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #ff3b30;
+}
+
+        /* Main heading */
+
+        .hero-title {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(55px, 8vw, 108px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            font-weight: 600;
+
+            max-width: 1000px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-title .gradient-text {
+    background:
+        linear-gradient(
+            110deg,
+            #ff2f2f 10%,
+            #ff3b30 55%,
+            #d91f1f 90%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+        /* Description */
+
+        .hero-description {
+            max-width: 650px;
+
+           color: #555555;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            margin-bottom: 40px;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 70px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 165px;
+
+            padding: 14px 22px;
+
+            border-radius: 100px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border 0.3s ease;
+        }
+
+        .btn-primary {
+    background: #111111;
+    color: #ffffff;
+
+            box-shadow:
+                0 10px 35px rgba(255,255,255,0.08);
+        }
+
+        .btn-primary:hover {
+    transform: translateY(-3px);
+    background: #ff3b30;
+}
+
+        .btn-secondary {
+    color: #111111;
+
+    border: 1px solid rgba(0,0,0,0.12);
+
+    background: rgba(255,255,255,0.75);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(255,47,47,0.45);
+
+    background: rgba(255,47,47,0.06);
+}
+
+        /* =========================
+           STAT CARDS
+        ========================= */
+
+        .hero-stats {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+
+            max-width: 850px;
+        }
+
+        .stat-card {
+            position: relative;
+
+            padding: 24px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            background:
+    linear-gradient(
+        to bottom,
+        #ff3b30,
+        transparent
+    );
+
+            backdrop-filter: blur(18px);
+
+            border-radius: 18px;
+
+            text-align: left;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border 0.35s ease;
+        }
+
+        .stat-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            right: -60px;
+            top: -60px;
+
+            border-radius: 50%;
+
+            background: rgba(137,95,255,0.13);
+
+            filter: blur(25px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(155,124,255,0.28);
+        }
+
+        .stat-number {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 32px;
+
+            font-weight: 600;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+
+            color: #858585;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.4px;
+        }
+
+        /* =========================
+           SCROLL INDICATOR
+        ========================= */
+
+        .scroll-indicator {
+            position: absolute;
+
+            bottom: 25px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #666;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+       .scroll-line {
+    width: 1px;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ff3b30,
+            transparent
+        );
+
+    animation: scrollMove 2s ease-in-out infinite;
+}
+
+        @keyframes scrollMove {
+
+            0%, 100% {
+                opacity: 0.3;
+                transform: translateY(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(8px);
+            }
+
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .hero-content {
+                padding: 90px 0 70px;
+            }
+
+            .hero-title {
+                font-size: clamp(48px, 14vw, 75px);
+
+                letter-spacing: -3px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+
+                width: 100%;
+
+                margin-bottom: 50px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+
+                max-width: 400px;
+            }
+
+            .stat-card {
+                text-align: center;
+            }
+
+            .orb-1 {
+                left: 8%;
+            }
+
+            .orb-2 {
+                right: 8%;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .hero-label {
+                font-size: 10px;
+
+                padding: 8px 12px;
+
+                letter-spacing: 1.2px;
+            }
+
+            .hero-title {
+                font-size: 47px;
+
+                line-height: 0.98;
+            }
+
+            .hero-description {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-minimal">
+        <a href="index.html#hero" class="logo">
+            Aromal A
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
+
+    <section class="hero">
+
+        <!-- Background -->
+        <div class="grid-background"></div>
+
+        <!-- Floating particles -->
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+
+        <div class="hero-content">
+
+            <!-- Label -->
+            <div class="hero-label">
+                <span class="label-dot"></span>
+                Meta Ads & Lead Generation
+            </div>
+
+
+            <!-- Heading -->
+            <h1 class="hero-title">
+
+                Turning Paid Attention
+                <br>
+
+                Into
+                <span class="gradient-text">
+                    Real Results.
+                </span>
+
+            </h1>
+
+
+            <!-- Description -->
+            <p class="hero-description">
+
+                I build and optimise performance-focused Meta
+                advertising campaigns designed to generate
+                leads, conversations, enquiries and measurable
+                business growth.
+
+            </p>
+
+        <!-- Scroll -->
+        <div class="scroll-indicator">
+
+            <span>
+                Scroll
+            </span>
+
+            <span class="scroll-line"></span>
+
+        </div>
+
+        </section>
+
+        
+
+<!-- =========================
+     CLIENT 01 — UIRDF
+========================= -->
+
+<div class="client-studies-title">
+    CLIENT CASE STUDIES
+</div>
+
+<p class="case-studies-intro">
+    The case studies below showcase a curated selection of campaigns from the
+    clients I’ve worked with across different industries. Rather than listing
+    every project, I’ve selected campaigns that best demonstrate the strategy,
+    execution and measurable results behind my work — from lead generation and
+    messaging campaigns to audience growth and performance optimisation.
+</p>
+
+<section class="client-case-study">
+    <div class="client-case-container">
+
+        <div class="client-case-heading">
+
+            <div>
+                <h1>01 — UIRDF</h1>
+
+                <p class="client-case-category">
+                    Employment Initiative <span>·</span> Meta Ads <span>·</span> Lead Generation
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="client-case-grid">
+
+            <!-- LEFT CONTENT -->
+            <div class="client-case-content">
+
+                <p class="client-case-description">
+                    Managed and optimised Meta advertising campaigns for UIRDF,
+                    with a focus on generating leads, increasing messaging conversations
+                    and driving targeted audience reach. Across multiple campaigns and
+                    creative formats, the campaigns generated 1,000+ leads while also
+                    delivering strong reach, landing page visits and direct messaging
+                    interactions. Campaign performance was continuously monitored and
+                    optimised based on cost per result, audience response and campaign
+                    objectives to improve lead generation efficiency.
+                </p>
+
+
+                <div class="client-info-grid">
+
+                    <div class="client-info">
+                        <span>WHAT I DID</span>
+
+                        <p>
+                            Planned, managed and optimised Meta campaigns across lead
+                            generation, messaging and traffic-focused objectives, with
+                            continuous performance monitoring and audience optimisation.
+                        </p>
+                    </div>
+
+
+                    <div class="client-info">
+                        <span>OUTCOME</span>
+
+                        <p>
+                            Generated 1,000+ leads alongside strong reach, messaging
+                            interactions and landing page activity across multiple
+                            campaigns, while maintaining a focus on cost-efficient results.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT CAMPAIGN SCREENSHOT -->
+
+            <div class="client-case-media">
+
+    <img
+        src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791229902/uirdf-campaign-01_nv17ez.png"
+        alt="UIRDF Meta Ads Campaign"
+        class="client-campaign-image"
+        id="uirdfCampaignImage"
+        title="Click to view full size"
+        loading="lazy"
+        decoding="async"
+    >
+
+    <div class="client-campaign-navigation"></div>
+
+    <button
+        type="button"
+        class="client-campaign-next"
+        id="uirdfCampaignNext"
+    >
+        Next →
+    </button>
+
+</div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     CLIENT 02 — LR INTERIORS
+========================= -->
+
+<section class="client-case-study">
+    <div class="client-case-container">
+
+        <div class="client-case-heading">
+
+    <div>
+        
+        <h1>02 — LR Interiors</h1>
+
+        <p class="client-case-category">
+            Interior Design <span>·</span> Meta Ads <span>·</span> Lead Generation
+        </p>
+    </div>
+
+</div>
+              
+
+        <div class="client-case-grid">
+
+    <!-- LEFT CONTENT -->
+    <div class="client-case-content">
+
+        <p class="client-case-description">
+            Managed and optimised multiple Meta advertising campaigns for LR Interiors across different creative formats, with a focus on generating qualified enquiries, increasing messaging conversations and expanding audience reach. Over the campaign period, the campaigns generated 500+ messaging conversations, reached 1M+ users across multiple campaigns, and also drove additional enquiries and call-based interactions. Campaign performance was continuously monitored and optimised based on audience response, campaign objectives and cost per result.
+        </p>
+
+        
+
+        <div class="client-info-grid">
+
+            <div class="client-info">
+                <span>WHAT I DID</span>
+                <p>
+                    Managed Meta campaigns across multiple
+                    creative formats with ongoing performance
+                    monitoring and optimisation.
+                </p>
+            </div>
+
+            <div class="client-info">
+                <span>OUTCOME</span>
+                <p>
+                    Generated consistent messaging conversations
+                    while expanding campaign reach across
+                    targeted audiences.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT CAMPAIGN SCREENSHOT -->
+    <div class="client-case-media">
+
+        <img
+            src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791230460/lr-campaign-01_edic60.png"
+            alt="LR Interiors Meta Ads Campaign"
+            class="client-campaign-image"
+            id="lrCampaignImage"
+            title="Click to view full size"
+            loading="lazy"
+            decoding="async"
+        >
+
+        <button
+            type="button"
+            class="client-campaign-next"
+            id="lrCampaignNext"
+        >
+            Next →
+        </button>
+
+    </div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     CLIENT 03 — GTEC
+========================= -->
+
+<section class="client-case-study">
+    <div class="client-case-container">
+
+        <div class="client-case-heading">
+
+            <div>
+
+                <h1>03 — GTEC</h1>
+
+                <p class="client-case-category">
+                    Education <span>·</span> Meta Ads <span>·</span> Lead Generation
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="client-case-grid">
+
+            <!-- LEFT CONTENT -->
+            <div class="client-case-content">
+
+                <p class="client-case-description">
+                    Managed and optimised Meta advertising campaigns for GTEC’s
+                    Ernakulam region, supporting multiple centres across Ernakulam
+                    and nearby locations. Campaigns were developed for a range of
+                    educational programmes, including SAP, Full Stack, Multimedia,
+                    Diploma and other professional courses, with a focus on
+                    generating enquiries, messaging conversations and course
+                    interest. Campaign performance was continuously monitored and
+                    refined based on campaign objectives, audience response and
+                    cost efficiency.
+                </p>
+
+
+                <div class="client-info-grid">
+
+                    <div class="client-info">
+
+                        <span>WHAT I DID</span>
+
+                        <p>
+                            Planned, launched and managed Meta advertising
+                            campaigns across multiple GTEC centres and course
+                            offerings, with a focus on lead generation, messaging
+                            and website traffic. Tested different creatives,
+                            audiences and campaign objectives while continuously
+                            monitoring cost per result, reach and engagement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="client-info">
+
+                        <span>OUTCOME</span>
+
+                        <p>
+                            Generated consistent course enquiries, messaging
+                            conversations and leads across multiple campaigns
+                            and locations. Several campaigns delivered
+                            cost-efficient results while reaching thousands of
+                            potential students across GTEC’s educational
+                            programmes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT CAMPAIGN SCREENSHOT -->
+            <div class="client-case-media">
+
+                <img
+                    src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791230814/gtec-01_spwfpa.png"
+                    alt="GTEC Meta Ads Campaign Results"
+                    class="client-campaign-image"
+                    id="gtecCampaignImage"
+                    title="Click to view full size"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <button
+                    type="button"
+                    class="client-campaign-next"
+                    id="gtecCampaignNext"
+                >
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     CLIENT 04 — UR FURNACE
+========================= -->
+
+<section class="client-case-study">
+    <div class="client-case-container">
+
+        <div class="client-case-heading">
+
+            <div>
+
+                <h1>04 — UR Furnace</h1>
+
+                <p class="client-case-category">
+                    Waste Management <span>·</span> Meta Ads <span>·</span> Lead Generation
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="client-case-grid">
+
+            <!-- LEFT CONTENT -->
+            <div class="client-case-content">
+
+                <p class="client-case-description">
+                    Managed and optimised Meta advertising campaigns for UR Furnace with a focus on driving high-intent customer enquiries through calls and messaging. Developed and refined campaigns across multiple creative formats and promotional approaches, targeting relevant audiences and optimising performance based on campaign objectives. Continuous monitoring of reach, enquiry volume and cost per result helped improve campaign efficiency and maintain consistent lead-generation performance across multiple campaigns.
+                </p>
+
+
+                <div class="client-info-grid">
+
+                    <div class="client-info">
+
+                        <span>WHAT I DID</span>
+
+                        <p>
+                            Planned, managed and optimised Meta campaigns
+                            focused on call and messaging conversions,
+                            with continuous performance monitoring,
+                            audience optimisation and creative testing.
+                        </p>
+
+                    </div>
+
+
+                    <div class="client-info">
+
+                        <span>OUTCOME</span>
+
+                        <p>
+                            Generated 3,900+ calls and 850+ messaging
+                            conversations across the campaigns shown,
+                            with several campaigns achieving strong
+                            enquiry volumes at efficient costs per result.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT CAMPAIGN SCREENSHOT -->
+            <div class="client-case-media">
+
+                <img
+                    src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791231139/ur-01_xdcgws.png"
+                    alt="UR Furnace Meta Ads Campaign"
+                    class="client-campaign-image"
+                    id="urCampaignImage"
+                    title="Click to view full size"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <button
+                    type="button"
+                    class="client-campaign-next"
+                    id="urCampaignNext"
+                >
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     CLIENT 05 — PHOENIX CAREER SOLUTIONS
+========================= -->
+
+<section class="client-case-study">
+    <div class="client-case-container">
+
+        <div class="client-case-heading">
+
+            <div>
+
+                <h1>05 — Phoenix Career Solutions</h1>
+
+                <p class="client-case-category">
+                    Education Consultancy <span>·</span> Meta Ads <span>·</span> Lead Generation
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="client-case-grid">
+
+            <!-- LEFT CONTENT -->
+            <div class="client-case-content">
+
+                <p class="client-case-description">
+                    Managed and optimised Meta advertising campaigns for Phoenix Career Solutions with a focus on generating student enquiries through messaging. Campaigns were developed to promote educational opportunities and career-related services while reaching relevant student and parent audiences. Performance was continuously monitored and optimised based on messaging volume, audience response and cost per result to improve enquiry generation and campaign efficiency.
+                </p>
+
+
+                <div class="client-info-grid">
+
+                    <div class="client-info">
+
+                        <span>WHAT I DID</span>
+
+                        <p>
+                            Planned, managed and optimised Meta campaigns
+                            focused on generating student enquiries through
+                            messaging, with ongoing audience optimisation,
+                            creative testing and performance monitoring.
+                        </p>
+
+                    </div>
+
+
+                    <div class="client-info">
+
+                        <span>OUTCOME</span>
+
+                        <p>
+                            Generated 1,500+ messaging conversations across
+                            the campaigns shown, with multiple campaigns
+                            delivering consistent enquiry volumes at
+                            varying costs per messaging conversation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT CAMPAIGN SCREENSHOT -->
+            <div class="client-case-media">
+
+                <img
+                    src="https://res.cloudinary.com/dbqrbaioc/image/upload/v1791231412/phoenix_aemojb.png"
+                    alt="Phoenix Career Solutions Meta Ads Campaign"
+                    class="client-campaign-image"
+                    id="phoenixCampaignImage"
+                    title="Click to view full size"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     CTA SECTION
+========================= -->
+
+<section class="cta-section" id="contact">
+
+    <div class="cta-container">
+
+        <span class="cta-eyebrow">
+            Ready to Grow?
+        </span>
+
+        <h2>
+            Let's turn attention
+            <span>into action.</span>
+        </h2>
+
+        <p>
+            Have a campaign, business or growth goal in mind?
+            Let's build a strategy focused on real results.
+        </p>
+
+        <a href="mailto:aromalanil002@gmail.com" class="cta-button">
+            Start a Conversation
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     IMAGE ZOOM MODAL LIGHTBOX
+========================== -->
+<div class="logo-modal" id="logoModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="logo-modal-backdrop" id="logoModalBackdrop"></div>
+    <div class="logo-modal-dialog">
+        <button type="button" class="logo-modal-close" id="logoModalClose" aria-label="Close preview">✕</button>
+        <div class="logo-modal-image-wrapper">
+            <img src="" alt="" id="logoModalImg" class="logo-modal-img">
+        </div>
+        <p class="logo-modal-title" id="logoModalTitle"></p>
+        <span class="logo-modal-hint">Click outside or press Esc to close</span>
+    </div>
+</div>
+
+<script type="module" src="/js/script.js"></script>
+
+</body>
+</html>
